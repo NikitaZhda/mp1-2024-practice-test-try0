@@ -1,5 +1,11 @@
 // Задача 3. Найти максимум из вешественных чисел a и b
-double max_of_two_numbers(double a, double b)
-{
-  return 0.0;
-}
+
+{{ edit_1 }}
+  // Проверка на переполнение
+  if (a > 0 && b > UINT_MAX / a) {
+    return UINT_MAX; // Возвращаем UINT_MAX при переполнении
+  }
+  return a * b; // Возвращаем произведение
+{{ edit_2 }}
+  return (a > b) ? a : b; // Возвращаем максимум из a и b
+
